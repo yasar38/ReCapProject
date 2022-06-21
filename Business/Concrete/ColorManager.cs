@@ -14,12 +14,32 @@ namespace Business.Concrete
         IColorDal _colorDal;
         public ColorManager(IColorDal colorDal)
         {
-            _colorDal = colorDal;
+            this._colorDal = colorDal;
+        }
+
+        public void Add(Color color)
+        {
+            _colorDal.Add(color);
+        }
+
+        public void Delete(Color color)
+        {
+            _colorDal.Delete(color);
+        }
+
+        public List<Color> GetAll()
+        {
+            return _colorDal.GetAll();
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void Update(Color color)
+        {
+            _colorDal.Update(color);
         }
     }
 }

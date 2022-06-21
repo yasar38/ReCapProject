@@ -17,15 +17,47 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+        public List<Car> GetCarsByBrandId(int id)
+        {
+            return _carDal.GetAll(p=>p.BrandId==id);
+        }
+        public List<Car> GetCarsByColorId(int id)
+        {
+            return _carDal.GetCarsByBrandId(c => c.ColorId == id).ToList();
+        }
+        public void Add(Car car)
+        {
+            if ((car.Description.Length >= 2) && (car.DailyPrice > 0))
+            {
+                _carDal.Add(car);
+            }
+            else
+                Console.WriteLine("Bir sorun oluştu hatalı bilgi girildi açıklama kısmı 2 karakterden az fiyat 0 olamaz!!");
+        }
+
+        public void Delete(Car car)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }
 
-        public List<Car> GetCarsByBrandId(int id)
+        public List<Car> GetCarById(int id)
         {
-            return _carDal.GetAll(p=>p.BrandId==id);
+            return _carDal.GetAll(p => p.CarId == id).ToList();
+        }
+
+        public List<Car> GetCarDetail()
+        {
+            //Burda iş yapan kodlar var
+            return _carDal.GetAll();
+        }
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
         }
     }
 }
