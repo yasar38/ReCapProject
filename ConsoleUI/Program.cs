@@ -10,19 +10,17 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarTest();
-            //BrandManager brandManager = new BrandManager(new EfBrandDal());
-            //foreach (var brand in brandManager.GetAll())
-            //{
-            //    Console.WriteLine(brand.BrandName);
-            //}
+            CarTest();
+            //BrandGetName();
 
+
+
+            //-----------------Car Nesnesini Veri Tabanına Ekleme---
             //CarManager carManager = new CarManager(new EfCarDal());
             //Car car8 = new Car() { BrandId = 3, ColorId = 3, Description = "C", ModelYear = "2020", DailyPrice =0};
             //carManager.Add(car8);
 
-            
-
+            //-----------------İd ile Car Çağırma------------
             //CarManager carManager = new CarManager(new EfCarDal());
             //carManager.GetCarById(1);
             //foreach (var car in carManager.GetCarById(1))
@@ -30,14 +28,25 @@ namespace ConsoleUI
             //    Console.WriteLine(car.DailyPrice);
             //}
 
+
+
+        }
+
+        private static void BrandGetName()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.BrandName);
+            }
         }
 
         private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.Description);
+                Console.WriteLine(car.CarName + "/" + car.BrandName + "/" + car.ColorName);
 
             }
             Console.ReadLine();
