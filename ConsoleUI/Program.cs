@@ -10,7 +10,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarTest();
+            AddUser();
+            //CarTest();
             //BrandGetName();
 
 
@@ -57,6 +58,13 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
+        }
+        private static void AddUser()
+        {
+            //User
+            UserManager userManager = new UserManager(new EfUserDal());
+
+            userManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", Email = "abcd.email@gmail.com", Password = "abcd1234" });
         }
     }
 }
