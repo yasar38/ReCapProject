@@ -10,8 +10,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            AddUser();
-            //CarTest();
+            //AddUser();
+            CarTest();
             //BrandGetName();
 
 
