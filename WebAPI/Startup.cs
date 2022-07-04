@@ -33,23 +33,23 @@ namespace WebAPI
 
             services.AddControllers();
 
-            services.AddSingleton<ICarService, CarManager>(); // servis bağımlılığı görürsen arka planda manager new'le demek bunun sayesinde ctor erişemediimizde bile kullanabiliyoruz
-            services.AddSingleton<ICarDal, EfCarDal>();
+            //services.AddSingleton<ICarService, CarManager>(); // servis bağımlılığı görürsen arka planda manager new'le demek bunun sayesinde ctor erişemediimizde bile kullanabiliyoruz
+            //services.AddSingleton<ICarDal, EfCarDal>();
 
-            services.AddSingleton<IBrandService, BrandManager>();
-            services.AddSingleton<IBrandDal, EfBrandDal>();
+            //services.AddSingleton<IBrandService, BrandManager>();
+            //services.AddSingleton<IBrandDal, EfBrandDal>();
 
-            services.AddSingleton<IColorService, ColorManager>();
-            services.AddSingleton<IColorDal, EfColorDal>();
+            //services.AddSingleton<IColorService, ColorManager>();
+            //services.AddSingleton<IColorDal, EfColorDal>();
 
-            services.AddSingleton<ICustomerService, CustomerManager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
+            //services.AddSingleton<ICustomerService, CustomerManager>();
+            //services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
-            services.AddSingleton<IRentalService, RentalManager>();
-            services.AddSingleton<IRentalDal, EfRentalDal>();
+            //services.AddSingleton<IRentalService, RentalManager>();
+            //services.AddSingleton<IRentalDal, EfRentalDal>();
 
-            services.AddSingleton<IUserService, UserManager>();
-            services.AddSingleton<IUserDal, EfUserDal>();
+            //services.AddSingleton<IUserService, UserManager>();
+            //services.AddSingleton<IUserDal, EfUserDal>();
 
             services.AddSwaggerGen(c =>
             {
